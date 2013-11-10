@@ -43,5 +43,12 @@
             <argument type="service" id="event_dispatcher" />
         </service>
 
+        <service id="be_simple_deployment.listener" class="BeSimple\DeploymentBundle\Listener\DeploymentListener">
+            <argument type="service" id="be_simple_deployment.ssh" />
+            <argument type="service" id="be_simple_deployment.config" />
+
+            <tag name="kernel.event_listener" event="onDeploymentStart" method="onDeploymentStart" />
+        </service>
+
     </services>
 </container>

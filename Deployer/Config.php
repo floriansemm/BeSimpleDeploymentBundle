@@ -25,6 +25,11 @@ class Config
     protected $config;
 
     /**
+     * @var string
+     */
+    protected $release;
+
+    /**
      * @param array $rules
      * @param array $commands
      * @param array $servers
@@ -124,5 +129,21 @@ class Config
         }
 
         return $config;
+    }
+
+    /**
+     * @param string $release
+     */
+    public function setRelease($release)
+    {
+        $this->release = $release;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRelease()
+    {
+        return $this->release;
     }
 }

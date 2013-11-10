@@ -74,7 +74,7 @@ class Deployer
         }
 
         $this->dispatcher->dispatch(Events::onDeploymentStart, new DeployerEvent($server, $real));
-
+exit;
         $config = $this->config->getServerConfig($server);
 
         $this->rsync->run($config['connection'], $config['rules'], $real);
